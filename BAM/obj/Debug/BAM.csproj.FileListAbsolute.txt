@@ -1,0 +1,10 @@
+C:\Users\wjdwn\Desktop\MICT\BAM\BAM\bin\Debug\BAM.exe.config
+C:\Users\wjdwn\Desktop\MICT\BAM\BAM\bin\Debug\BAM.exe
+C:\Users\wjdwn\Desktop\MICT\BAM\BAM\bin\Debug\BAM.pdb
+C:\Users\wjdwn\Desktop\MICT\BAM\BAM\obj\Debug\BAM.csprojAssemblyReference.cache
+C:\Users\wjdwn\Desktop\MICT\BAM\BAM\obj\Debug\BAM.Form1.resources
+C:\Users\wjdwn\Desktop\MICT\BAM\BAM\obj\Debug\BAM.Properties.Resources.resources
+C:\Users\wjdwn\Desktop\MICT\BAM\BAM\obj\Debug\BAM.csproj.GenerateResource.cache
+C:\Users\wjdwn\Desktop\MICT\BAM\BAM\obj\Debug\BAM.csproj.CoreCompileInputs.cache
+C:\Users\wjdwn\Desktop\MICT\BAM\BAM\obj\Debug\BAM.exe
+C:\Users\wjdwn\Desktop\MICT\BAM\BAM\obj\Debug\BAM.pdb
