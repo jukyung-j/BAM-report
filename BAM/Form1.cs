@@ -85,34 +85,27 @@ namespace BAM
                 }
             }
             int[] new_Y = new int[height * width];
-            int u=0, r = 0;
-            bool update = true;
-           
-                for (int i = 0; i < height * width; i++)
-                {
-                    int net = 0;
-                    int[] X = new int[width*height];
-                    for (int j = 0; j < height * width; j++)
-                    {
-                        net += W[j] * Y[j];
-                    }
-                    int new_y = 0;
-                    if (net < 0)
-                    {
-                        new_y = -1;
-                    }
-                    else if (net > 0)
-                    {
-                        new_y = 1;
-                    }
-                    else
-                    {
-                        new_y = Y[i];
-                    }
-                    result = new_y;
-                }
             
-            
+            int net = 0;
+            int[] X = new int[width * height];
+            for (int j = 0; j < height * width; j++)
+            {
+                net += W[j] * Y[j];
+            }
+            int new_y = 0;
+            if (net < 0)
+            {
+                new_y = -1;
+            }
+            else if (net > 0)
+            {
+                new_y = 1;
+            }
+            else
+            {
+                new_y = 0;      // 다른 사람
+            }
+            result = new_y;
             return result;
     }
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
