@@ -45,11 +45,11 @@ namespace BAM
                     gray = Color.FromArgb(brightness, brightness, brightness);
                     bmp.SetPixel(x, y, gray);
                     pixelColor = bmp.GetPixel(x, y);
-                    bmpArray[y * bmp.Width + x] = pixelColor.R;
+                    bmpArray[y * bmp.Width + x] = bmp.GetPixel(x, y).R;
                 }
             return bmpArray;
         }
-        private int[] hopfieldSetWeight(int[] image,int[] image2, int height, int width)
+        private int[] BamSetWeight(int[] image,int[] image2, int height, int width)
         {
             int[,] S = new int[height * width,2];
             int[] W = new int[height * width];
@@ -69,7 +69,7 @@ namespace BAM
             }
             return W;
         }
-        public int hopfieldPredict(int[] image,int[] W, int height, int width)
+        public int BamPredict(int[] image,int[] W, int height, int width)
         {
             int[] Y = new int[width * height];
             int[] X = new int[width * height];
@@ -82,28 +82,26 @@ namespace BAM
             }
             int[] new_Y = new int[height * width];
 
-            for(int z = 0; z < 2; z++) {
-                int net = 0;
-                for (int j = 0; j < height * width; j++)
-                {
-                    net += W[j] * Y[j];
-                }
-                int new_y = 0;
-                if (net < 0)
-                {
-                    new_y = -1;
-                }
-                else if (net > 0)
-                {
-                    new_y = 1;
-                }
-                else
-                {
-                    new_y = 0;      // 다른 사람
-                    result = new_y;
-                    break;
-                }
-                for (int j = 0; j < height * width; j++)
+            // Bam 이 저장할 수 있는 패턴 수 min(x,y)
+            int net = 0;
+            for (int j = 0; j < height * width; j++)
+            {
+                net += W[j] * Y[j];
+            }
+            int new_y = 0;
+            if (net < 0)
+            {
+                new_y = -1;
+            }
+            else if (net > 0)
+            {
+                new_y = 1;
+            }
+            else
+            {
+                new_y = 0;    
+            }
+            for (int j = 0; j < height * width; j++)
                 {
                     X[j] = W[j] * new_y;
                     if (X[j] > 0)
@@ -114,8 +112,8 @@ namespace BAM
                         X[j] = Y[j];
                     Y[j] = X[j];
                 }
-                result = new_y;
-            }
+            result = new_y;
+            
            
             return result;
     }
@@ -170,7 +168,7 @@ namespace BAM
                 learn_img2[i] = imgArray2[i] > 128 ? 1 : -1;
              }
 
-            int[] W = hopfieldSetWeight(learn_img, learn_img2, height, width);
+            int[] W = BamSetWeight(learn_img, learn_img2, height, width);
 
             int[] target_img = new int[height*width];
 
@@ -181,14 +179,14 @@ namespace BAM
             // 4. 학습된 결과 이미지 예측
             int result;
 
-            result = hopfieldPredict(target_img, W, height, width);
+            result = BamPredict(target_img, W, height, width);
 
-            if (result == 1)
-                MessageBox.Show("아이유 입니다");
-            else if (result == -1)
-                MessageBox.Show("로제입니다");
-            else
-                MessageBox.Show("error");
+             if (result == 1)
+                 MessageBox.Show("아이유 입니다");
+             else if (result == -1)
+                 MessageBox.Show("로제입니다");
+             else
+                 MessageBox.Show("error");
 
         }
     }
