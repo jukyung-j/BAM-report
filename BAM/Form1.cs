@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace BAM
 {
     public partial class Form1 : Form
@@ -37,6 +36,7 @@ namespace BAM
             byte[] bmpArray = new byte[bmp.Height * bmp.Width];
             int brightness;
             Color gray;
+
             for (int x = 0; x < bmp.Width; x++)
                 for (int y = 0; y < bmp.Height; y++)
                 {
@@ -138,7 +138,6 @@ namespace BAM
             }
 
         }
-
         private void bAMToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -167,7 +166,6 @@ namespace BAM
                 learn_img[i] = imgArray[i] > 128 ? 1 : -1;
                 learn_img2[i] = imgArray2[i] > 128 ? 1 : -1;
              }
-
             int[] W = BamSetWeight(learn_img, learn_img2, height, width);
 
             int[] target_img = new int[height*width];
