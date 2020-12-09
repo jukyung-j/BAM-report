@@ -6,7 +6,8 @@
 
 
 ## 2. 프로그램 설명
-(2-1) BAM이란?
+(2-1) BAM이란?  
+<img src="https://user-images.githubusercontent.com/68947314/101620172-90276a00-3a57-11eb-909c-1c0fb97cf88e.png" width="30%" height="40%"></img>
 
 
 
@@ -22,7 +23,7 @@ BAM이란, 2개의 층(X 입력층, Y 출력층)으로 구성되어있다.
 각 층은 완전히 연결된 구조를 이루고 있으며  
 
 
-X → Y 가중치 행렬은   이고,
+X → Y 가중치 행렬은<img src="https://user-images.githubusercontent.com/68947314/101620279-ad5c3880-3a57-11eb-9dc6-0bf6cc3c8509.png"></img>   이고,
 
 
 
@@ -191,18 +192,20 @@ Bitmap 데이터를 Byte로 변환하는 메소드이다.
 
 ## 3. 프로그램 동작
 
+<img src="https://user-images.githubusercontent.com/68947314/101620344-c4028f80-3a57-11eb-8e99-b53ca9b08601.png"></img>  
 시작화면으로 File 메뉴를 선택하여 왼쪽과 오른쪽 상자에 Train Data를 입력하고,  
 BAM 메뉴를 선택하여 중간 상자에 Test Data를 입력한다.  
 
 
-
+<img src="https://user-images.githubusercontent.com/68947314/101620391-d8468c80-3a57-11eb-9da5-e1a2483301eb.png"></img>  
 Train Data를 입력한 화면이다.  
 왼쪽 상자에는 가수 아이유를 입력하고, 오른쪽 상자에는 블랙핑크 로제를 입력하였다.  
 
 
 
 
-
+<img src="https://user-images.githubusercontent.com/68947314/101620471-ec8a8980-3a57-11eb-8c8a-b3c3c45081e2.png"></img>  
+<img src="https://user-images.githubusercontent.com/68947314/101620523-ff04c300-3a57-11eb-9c67-ea732e6fe866.png"></img>  
 
 
 
